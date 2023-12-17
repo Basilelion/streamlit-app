@@ -212,6 +212,22 @@ if page == pages[1] :
   #st.header('Exploration')
   explo_choisi = st.selectbox(label = "Choix", options = ['-- Sélectionnez un menu --', 'Source et présentation du jeu de données', 'description du jeu de données'])
   if explo_choisi == 'Source et présentation du jeu de données':
+      st.markdown(
+        """
+        <style>
+            .highlight {
+                background-color: #F0F8FF;  /* Alice Blue */
+                padding: 15px;
+                border-radius: 8px;
+                text-align: center;
+                font-size: 24px;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    # Text with adjusted styling
+      st.markdown('<p class="highlight">Source et présentation du jeu de données</p>', unsafe_allow_html=True)
       st.write("Le jeu de données du projet provient de Kaggle dont le lien se trouve ci-dessous:")
       lien_http = "[https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset](https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset)"
       st.markdown(lien_http, unsafe_allow_html=True)
@@ -220,6 +236,22 @@ if page == pages[1] :
       améliorer les campagnes marketing à venir de la banque afin d'aboutir à une hausse du taux de souscription d'un compte de dépôts à terme.")
       
   if explo_choisi == 'description du jeu de données':
+      st.markdown(
+        """
+        <style>
+            .highlight {
+                background-color: #F0F8FF;  /* Alice Blue */
+                padding: 15px;
+                border-radius: 8px;
+                text-align: center;
+                font-size: 24px;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    # Text with adjusted styling
+      st.markdown('<p class="highlight">Description du jeu de données</p>', unsafe_allow_html=True)
       st.write("Le jeu de Données se présente sur **11 162 lignes et 17 colonnes**, aucune lignes dupliquées, ni de valeurs manquantes avec **7 variables quantitatives (int64) et 10 variables qualitatives (Object)**")
       st.dataframe(df.head())
       st.write("Nous constatons ici que le jeu de Données affiche une variable cible **déposit** et **deux axes d'analyses** dont le premier axe est sur **le profil des clients** et le deuxième axe est sur **le déroulement de la campagne déjà réalisée** et les retours de cette dernière.")
@@ -240,6 +272,7 @@ if page == pages[1] :
       st.write("**pdays** : Variable quantitative indiquant le nombre de jours écoulé depuis le dernier contact échangé avec le client (lors de la campagne précédente). Sachant que -1 signifie que le client n’a pas été contacté lors de la campagne précédente")
       st.write("**previous** : Variable quantitative indiquant le nombre de contacts avec le client lors de la campagne précédente.")
       st.write("**poutcome** : Variable catégorielle montrant le résultat de la campagne de marketing précédente.")
+      st.write("**deposit** : Elle est notre variable cible, elle indique si oui ou non un client a souscrit à un dépôt à terme, c’est une variable catégorielle de type booléen et dont la distribution est analysée dans la partie qui suit.")
   
   #st.header('Visualisation')
   st.markdown('<p class="big-font">Visualisation</p>', unsafe_allow_html=True)
@@ -1377,7 +1410,7 @@ if page == pages[4] :
         """,
         unsafe_allow_html=True
     )
-  st.markdown('<p class="big-font">Prédiction pour le Marketing Téléphonique</p>', unsafe_allow_html=True)
+  st.markdown('<p class="big-font">Prédiction pour le telemarketing</p>', unsafe_allow_html=True)
   #st.header("Utilisation professionnelle du projet")
   df = pd.read_csv('Banktest.csv')
   
